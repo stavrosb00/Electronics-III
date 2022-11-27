@@ -1,0 +1,50 @@
+* source HL3_TELESTIKOS_MEPOLWSH9671
+M_M16         N04848 N04968 N05058 N05058 MbreakN  
++ L=1u  
++ W=1u         
+M_M15         N04968 N04968 N05058 N05058 MbreakN  
++ L=1u  
++ W=1u         
+M_M12         N04584 0 N04848 N04848 MbreakN  
++ L=1u  
++ W=8u         
+V_Vss1         0 N05058 2.013Vdc
+V_Vdd1         N04450 0 2.013Vdc
+M_M13         N04642 N04844 N04848 N04848 MbreakN  
++ L=1u  
++ W=8u         
+M_M9         N04584 N04584 N04450 N04450 MbreakP  
++ L=1u  
++ W=1u         
+C_Cc1         N04642 N04660  0.5962p  TC=0,0 
+M_M14         N04660 N04968 N05058 N05058 MbreakN  
++ L=1u  
++ W=6u         
+M_M11         N04660 N04642 N04450 N04450 MbreakP  
++ L=1u  
++ W=13u         
+C_CL1         0 N04660  2.71p  TC=0,0 
+M_M10         N04642 N04584 N04450 N04450 MbreakP  
++ L=1u  
++ W=1u         
+M_M17         N04968 N04968 N04450 N04450 MbreakP  
++ L=1u  
++ W=1u         
+M_M18         N05751 N04968 N04450 N04450 MbreakP  
++ L=1u  
++ W=1u         
+M_M19         N04968 N05751 N05785 N05785 MbreakN  
++ L=1u  
++ W=1u         
+M_M20         N05751 N05751 N05755 N05755 MbreakN  
++ L=1u  
++ W=1u         
+M_M21         N05785 N05755 N05773 N05773 MbreakN  
++ L=1u  
++ W=4u         
+M_M22         N05755 N05755 N05058 N05058 MbreakN  
++ L=1u  
++ W=1u         
+R_Rb         N05058 N05773  1000k TC=0,0 
+V_V1         0 N04844  
++PULSE 0 1 0 1n 1n 20n 40n

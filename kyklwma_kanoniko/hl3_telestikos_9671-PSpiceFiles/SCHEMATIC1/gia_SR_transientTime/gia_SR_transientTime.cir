@@ -1,0 +1,21 @@
+** Profile: "SCHEMATIC1-gia_SR_transientTime"  [ c:\cadence\hl3_telestikos_9671-PSpiceFiles\SCHEMATIC1\gia_SR_transientTime.sim ] 
+
+** Creating circuit file "gia_SR_transientTime.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+.LIB "../../../hl3_telestikos_9671-pspicefiles/hl3_telestikos_9671.lib" 
+* From [PSPICE NETLIST] section of C:\Users\Stavros\AppData\Roaming\SPB_Data\cdssetup\OrCAD_PSpice\17.2.0\PSpice.ini file:
+.lib "nomd.lib" 
+
+*Analysis directives: 
+.TRAN  0 2us 0 
+.TEMP 0 20 40 60
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+.END

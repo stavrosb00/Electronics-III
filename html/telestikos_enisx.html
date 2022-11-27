@@ -1,0 +1,279 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>telestikos_enisx</title><meta name="generator" content="MATLAB 9.6"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2022-01-24"><meta name="DC.source" content="telestikos_enisx.m"><style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; } 
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:12px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style></head><body><div class="content"><pre class="codeinput"><span class="comment">%Stavros Vasileios Bouliopoulos 9671</span>
+<span class="comment">%Hlentronikh 3 ergasia telestikou enisxyth</span>
+clear;
+<span class="comment">%prodiagrafes apo pdf ekfwnhshs</span>
+
+CL =2.71*10^(-12);
+<span class="comment">%SR&gt;...</span>
+SR_min =18.71*10^(6);
+V_dd =2.013;
+V_ss =-V_dd;
+<span class="comment">%GB&gt;...</span>
+GB_min =7.71*10^(6);
+<span class="comment">%A&gt;...</span>
+A_min =20.71;
+<span class="comment">%P&lt;...</span>
+P_max =50.71*10^(-3);
+Vin_max =0.1;
+Vin_min =-Vin_max;
+<span class="comment">%dedomena apo pspice model tou pdf ekfwnhshs</span>
+
+Vton =0.786;
+Vtop =-0.9056;
+<span class="comment">%thelw reumata Ib me I5 kontina</span>
+<span class="comment">%k 50 me 150 kai Cox apo forum thread</span>
+<span class="comment">%gia eukolia ston algori8mo ta 8ewroume ametablhta kai sta8era</span>
+kn =100*10^(-6);
+kp =50*10^(-6);
+Cox =2.3*10^(-3); <span class="comment">%f/&#956;^2=mili</span>
+<span class="comment">%CMOS 5n+3p</span>
+k1 =kn;
+k2 =k1;
+k7 =kn;
+k8 =k7;
+k5 =kn;
+
+k3 =kp;
+k4 =k3;
+k6 =kp;
+
+<span class="comment">%bhmata sxediashs apo aggliko pdf selida27-36</span>
+<span class="comment">%1</span>
+L =1*10^(-6); <span class="comment">%ola idio mhkos</span>
+<span class="comment">%2</span>
+Cc_min =0.22*CL; <span class="comment">%0.5962p</span>
+<span class="comment">%3</span>
+I5_min =Cc_min*SR_min;
+<span class="comment">%4</span>
+S3 = I5_min /(k3*(V_dd -Vin_max -abs(Vtop)+Vton)^2);
+S3 =ceil(S3);
+S4 =S3;
+<span class="comment">%5</span>
+I3 =I5_min;
+W3 =S3 *L;
+W4 =W3;
+p3 =sqrt(kp *S3 *I3)/(2 *0.667 *W3 *L *Cox);
+p3 =p3/(2*pi); <span class="comment">%1.225051503945623e+09&gt;&gt;77.1M</span>
+<span class="comment">%6</span>
+gm_1 =GB_min* 2* pi*Cc_min;
+gm_2 =gm_1;
+S1 =gm_1^2/(k2*I5_min);
+S1 =ceil(S1);
+S2 =S1;
+W1 =S1 *L;
+W2 =W1;
+<span class="comment">%7</span>
+b1 =k1*S1;
+VDS5_sat =Vin_min - V_ss - sqrt(I5_min/b1) - Vton; <span class="comment">% 0.7930&gt;0.1 comple</span>
+S5 =2*(I5_min)/(k5 *(VDS5_sat)^2);
+S5 =ceil(S5);
+S8 =S5;
+W5 =S5 *L;
+W8 =W5;
+<span class="comment">%telos me 1h aristerh bathmida ,twra gia thn 2h</span>
+<span class="comment">%8</span>
+I4 =I5_min/2;
+gm_4 =sqrt(2 *kp * S4 * I4);
+gm_6 =2.2 *gm_2 *CL/Cc_min;
+S6 =S4*gm_6/gm_4; <span class="comment">%VGS4=VGS6</span>
+S6 =ceil(S6); <span class="comment">%12.2295</span>
+I6 =gm_6^2/(2*k6*S6);
+<span class="comment">%9</span>
+S6other = gm_6 /(k6*VDS5_sat); <span class="comment">%agnooume gt 7.284123555911043&lt;S6</span>
+W6 =S6 *L;
+<span class="comment">%10</span>
+S7 =S5 *I6 /I5_min;
+S7 =ceil(S7);<span class="comment">%5.7523</span>
+W7 =S7 *L;
+<span class="comment">%11</span>
+el_n =0.05;
+el_p =0.15;
+P_diss =(I5_min+I6)*(V_dd +abs(V_ss));
+A_v =(2 *gm_2 *gm_6) /(I5_min *I6 *(el_n+el_p)^2); <span class="comment">%582</span>
+A_v =10 *log10(A_v);
+<span class="comment">%12+13 = bhmata gia prosomoiwsh kai tuning kai allages W apo pinakaki selida32</span>
+</pre><p class="footer"><br><a href="https://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2019a</a><br></p></div><!--
+##### SOURCE BEGIN #####
+%Stavros Vasileios Bouliopoulos 9671
+%Hlentronikh 3 ergasia telestikou enisxyth
+clear;
+%prodiagrafes apo pdf ekfwnhshs
+
+CL =2.71*10^(-12);
+%SR>...
+SR_min =18.71*10^(6);
+V_dd =2.013;
+V_ss =-V_dd;
+%GB>...
+GB_min =7.71*10^(6);
+%A>...
+A_min =20.71;
+%P<...
+P_max =50.71*10^(-3);
+Vin_max =0.1;
+Vin_min =-Vin_max;
+%dedomena apo pspice model tou pdf ekfwnhshs 
+
+Vton =0.786;
+Vtop =-0.9056;
+%thelw reumata Ib me I5 kontina
+%k 50 me 150 kai Cox apo forum thread
+%gia eukolia ston algori8mo ta 8ewroume ametablhta kai sta8era
+kn =100*10^(-6);
+kp =50*10^(-6);
+Cox =2.3*10^(-3); %f/μ^2=mili
+%CMOS 5n+3p
+k1 =kn;
+k2 =k1;
+k7 =kn;
+k8 =k7;
+k5 =kn;
+
+k3 =kp;
+k4 =k3;
+k6 =kp;
+
+%bhmata sxediashs apo aggliko pdf selida27-36
+%1
+L =1*10^(-6); %ola idio mhkos
+%2
+Cc_min =0.22*CL; %0.5962p
+%3
+I5_min =Cc_min*SR_min;
+%4
+S3 = I5_min /(k3*(V_dd -Vin_max -abs(Vtop)+Vton)^2);
+S3 =ceil(S3);
+S4 =S3;
+%5
+I3 =I5_min;
+W3 =S3 *L;
+W4 =W3;
+p3 =sqrt(kp *S3 *I3)/(2 *0.667 *W3 *L *Cox); 
+p3 =p3/(2*pi); %1.225051503945623e+09>>77.1M
+%6
+gm_1 =GB_min* 2* pi*Cc_min;
+gm_2 =gm_1;
+S1 =gm_1^2/(k2*I5_min);
+S1 =ceil(S1);
+S2 =S1;
+W1 =S1 *L;
+W2 =W1;
+%7
+b1 =k1*S1;
+VDS5_sat =Vin_min - V_ss - sqrt(I5_min/b1) - Vton; % 0.7930>0.1 comple
+S5 =2*(I5_min)/(k5 *(VDS5_sat)^2);
+S5 =ceil(S5);
+S8 =S5;
+W5 =S5 *L;
+W8 =W5;
+%telos me 1h aristerh bathmida ,twra gia thn 2h
+%8
+I4 =I5_min/2;
+gm_4 =sqrt(2 *kp * S4 * I4);
+gm_6 =2.2 *gm_2 *CL/Cc_min;
+S6 =S4*gm_6/gm_4; %VGS4=VGS6
+S6 =ceil(S6); %12.2295
+I6 =gm_6^2/(2*k6*S6);
+%9
+S6other = gm_6 /(k6*VDS5_sat); %agnooume gt 7.284123555911043<S6
+W6 =S6 *L;
+%10
+S7 =S5 *I6 /I5_min; 
+S7 =ceil(S7);%5.7523
+W7 =S7 *L;
+%11
+el_n =0.05;
+el_p =0.15;
+P_diss =(I5_min+I6)*(V_dd +abs(V_ss));
+A_v =(2 *gm_2 *gm_6) /(I5_min *I6 *(el_n+el_p)^2); %582
+A_v =10 *log10(A_v);
+%12+13 = bhmata gia prosomoiwsh kai tuning kai allages W apo pinakaki selida32
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+##### SOURCE END #####
+--></body></html>

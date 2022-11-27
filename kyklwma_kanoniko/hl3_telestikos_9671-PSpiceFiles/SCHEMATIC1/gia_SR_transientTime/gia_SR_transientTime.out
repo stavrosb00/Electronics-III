@@ -1,0 +1,373 @@
+
+**** 01/08/22 18:50:24 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-gia_SR_transientTime"  [ c:\cadence\hl3_telestikos_9671-PSpiceFiles\SCHEMATIC1\gia_SR_transientTime.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "gia_SR_transientTime.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+.LIB "../../../hl3_telestikos_9671-pspicefiles/hl3_telestikos_9671.lib" 
+* From [PSPICE NETLIST] section of C:\Users\Stavros\AppData\Roaming\SPB_Data\cdssetup\OrCAD_PSpice\17.2.0\PSpice.ini file:
+.lib "nomd.lib" 
+
+*Analysis directives: 
+.TRAN  0 2us 0 
+.TEMP 0 20 40 60
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source HL3_TELESTIKOS_9671
+M_M1         N00760 0 N00772 N00772 MbreakN  
++ L=1u  
++ W=8u         
+M_M2         N00768 N00825 N00772 N00772 MbreakN  
++ L=1u  
++ W=8u         
+M_M3         N00760 N00760 N00923 N00923 MbreakP  
++ L=1u  
++ W=1u         
+M_M4         N00768 N00760 N00923 N00923 MbreakP  
++ L=1u  
++ W=1u         
+M_M5         N00772 N01071 N01079 N01079 MbreakN  
++ L=1u  
++ W=1u         
+M_M6         N00865 N00768 N00923 N00923 MbreakP  
++ L=1u  
++ W=13u         
+M_M7         N00865 N01071 N01079 N01079 MbreakN  
++ L=1u  
++ W=6u         
+M_M8         N01071 N01071 N01079 N01079 MbreakN  
++ L=1u  
++ W=1u         
+C_Cc         N00768 N00865  0.5962p  TC=0,0 
+C_CL         0 N00865  2.71p  TC=0,0 
+I_Ib         N00923 N01071 DC 62uAdc  
+V_Vdd         N00923 0 2.013Vdc
+V_Vss         0 N01079 2.013Vdc
+V_V2         0 N00825  
++PULSE 0 1 0 1n 1n 20n 40n
+
+**** RESUMING gia_SR_transientTime.cir ****
+.END
+
+**** 01/08/22 18:50:24 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-gia_SR_transientTime"  [ c:\cadence\hl3_telestikos_9671-PSpiceFiles\SCHEMATIC1\gia_SR_transientTime.sim ] 
+
+
+ ****     MOSFET MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               MbreakN         MbreakP         
+               NMOS            PMOS            
+       LEVEL    3               3            
+         TPG                   -1            
+           L  100.000000E-06  100.000000E-06 
+           W  100.000000E-06  100.000000E-06 
+          LD  164.700000E-09   22.000000E-09 
+         VTO     .786           -.9056       
+          KP   96.379000E-06   29.352000E-06 
+       GAMMA     .5863           .4863       
+         PHI     .6              .6          
+      LAMBDA    0               0            
+         RSH   85.45          104.7          
+          IS   10.000000E-15   10.000000E-15 
+          JS    0               0            
+          PB     .8              .85         
+        PBSW     .8              .85         
+          CJ  385.410000E-06  484.470000E-06 
+        CJSW  139.400000E-12  164.570000E-12 
+          MJ    1.1854           .5027       
+        MJSW     .125195         .217168     
+        CGSO  402.410000E-12   53.752000E-12 
+        CGDO  402.410000E-12   53.752000E-12 
+        CGBO  361.440000E-12  336.500000E-12 
+        NSUB   16.160000E+15   18.900000E+15 
+         NFS    5.000000E+12    3.460000E+12 
+         TOX   21.200000E-09   21.200000E-09 
+          XJ  200.000000E-09  200.000000E-09 
+          UO  591.7           180.2          
+       UCRIT   10.000000E+03   10.000000E+03 
+        VMAX  208.200000E+03  373.200000E+03 
+       DELTA     .6967          1.52         
+       THETA     .08122          .1248       
+         ETA     .07066          .1641       
+       KAPPA     .1396          9.694        
+      DIOMOD    1               1            
+         VFB    0               0            
+        LETA    0               0            
+        WETA    0               0            
+          U0    0               0            
+        TEMP    0               0            
+         VDD    5               5            
+       XPART    0               0            
+
+
+**** 01/08/22 18:50:24 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-gia_SR_transientTime"  [ c:\cadence\hl3_telestikos_9671-PSpiceFiles\SCHEMATIC1\gia_SR_transientTime.sim ] 
+
+
+ ****     TEMPERATURE-ADJUSTED VALUES      TEMPERATURE =    0.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+ **** MOSFET MODEL PARAMETERS
+
+                   MbreakN        MbreakP    
+
+        VTO        8.347E-01     -9.575E-01  
+        PHI        6.600E-01      6.600E-01  
+         PB        8.420E-01      8.875E-01  
+     IS(JS)        1.048E-16      1.048E-16  
+         KP        1.110E-04      3.381E-05  
+         UO        6.816E+02      2.076E+02  
+
+
+**** 01/08/22 18:50:24 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-gia_SR_transientTime"  [ c:\cadence\hl3_telestikos_9671-PSpiceFiles\SCHEMATIC1\gia_SR_transientTime.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =    0.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00760)    -.3208 (N00768)    -.3208 (N00772)    -.8996 (N00825)    0.0000     
+
+(N00865)    -.1592 (N00923)    2.0130 (N01071)    -.3055 (N01079)   -2.0130 
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_Vdd       -5.364E-04
+    V_Vss       -5.364E-04
+    V_V2         0.000E+00
+
+    TOTAL POWER DISSIPATION   2.16E-03  WATTS
+
+
+**** 01/08/22 18:50:24 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-gia_SR_transientTime"  [ c:\cadence\hl3_telestikos_9671-PSpiceFiles\SCHEMATIC1\gia_SR_transientTime.sim ] 
+
+
+ ****     TEMPERATURE-ADJUSTED VALUES      TEMPERATURE =   20.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+ **** MOSFET MODEL PARAMETERS
+
+                   MbreakN        MbreakP    
+
+        VTO        7.988E-01     -9.192E-01  
+        PHI        6.157E-01      6.157E-01  
+         PB        8.110E-01      8.598E-01  
+     IS(JS)        3.319E-15      3.319E-15  
+         KP        9.985E-05      3.041E-05  
+         UO        6.130E+02      1.867E+02  
+
+
+**** 01/08/22 18:50:24 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-gia_SR_transientTime"  [ c:\cadence\hl3_telestikos_9671-PSpiceFiles\SCHEMATIC1\gia_SR_transientTime.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   20.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00760)    -.3725 (N00768)    -.3725 (N00772)    -.8897 (N00825)    0.0000     
+
+(N00865)    -.1571 (N00923)    2.0130 (N01071)    -.2793 (N01079)   -2.0130 
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_Vdd       -5.314E-04
+    V_Vss       -5.314E-04
+    V_V2         0.000E+00
+
+    TOTAL POWER DISSIPATION   2.14E-03  WATTS
+
+
+**** 01/08/22 18:50:24 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-gia_SR_transientTime"  [ c:\cadence\hl3_telestikos_9671-PSpiceFiles\SCHEMATIC1\gia_SR_transientTime.sim ] 
+
+
+ ****     TEMPERATURE-ADJUSTED VALUES      TEMPERATURE =   40.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+ **** MOSFET MODEL PARAMETERS
+
+                   MbreakN        MbreakP    
+
+        VTO        7.619E-01     -8.799E-01  
+        PHI        5.707E-01      5.707E-01  
+         PB        7.794E-01      8.316E-01  
+     IS(JS)        6.824E-14      6.824E-14  
+         KP        9.044E-05      2.754E-05  
+         UO        5.552E+02      1.691E+02  
+
+
+**** 01/08/22 18:50:24 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-gia_SR_transientTime"  [ c:\cadence\hl3_telestikos_9671-PSpiceFiles\SCHEMATIC1\gia_SR_transientTime.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   40.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00760)    -.4241 (N00768)    -.4241 (N00772)    -.8790 (N00825)    0.0000     
+
+(N00865)    -.1518 (N00923)    2.0130 (N01071)    -.2539 (N01079)   -2.0130 
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_Vdd       -5.271E-04
+    V_Vss       -5.271E-04
+    V_V2         0.000E+00
+
+    TOTAL POWER DISSIPATION   2.12E-03  WATTS
+
+
+**** 01/08/22 18:50:24 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-gia_SR_transientTime"  [ c:\cadence\hl3_telestikos_9671-PSpiceFiles\SCHEMATIC1\gia_SR_transientTime.sim ] 
+
+
+ ****     TEMPERATURE-ADJUSTED VALUES      TEMPERATURE =   60.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+ **** MOSFET MODEL PARAMETERS
+
+                   MbreakN        MbreakP    
+
+        VTO        7.240E-01     -8.394E-01  
+        PHI        5.252E-01      5.252E-01  
+         PB        7.472E-01      8.027E-01  
+     IS(JS)        9.843E-13      9.843E-13  
+         KP        8.242E-05      2.510E-05  
+         UO        5.060E+02      1.541E+02  
+
+
+**** 01/08/22 18:50:24 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-gia_SR_transientTime"  [ c:\cadence\hl3_telestikos_9671-PSpiceFiles\SCHEMATIC1\gia_SR_transientTime.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   60.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00760)    -.4759 (N00768)    -.4759 (N00772)    -.8675 (N00825)    0.0000     
+
+(N00865)    -.1441 (N00923)    2.0130 (N01071)    -.2293 (N01079)   -2.0130 
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_Vdd       -5.235E-04
+    V_Vss       -5.235E-04
+    V_V2         0.000E+00
+
+    TOTAL POWER DISSIPATION   2.11E-03  WATTS
+
+
+
+          JOB CONCLUDED
+
+**** 01/08/22 18:50:24 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-gia_SR_transientTime"  [ c:\cadence\hl3_telestikos_9671-PSpiceFiles\SCHEMATIC1\gia_SR_transientTime.sim ] 
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+  Total job time (using Solver 1)   =         .27
+

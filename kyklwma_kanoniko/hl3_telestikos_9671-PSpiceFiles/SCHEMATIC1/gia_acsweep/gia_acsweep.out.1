@@ -1,0 +1,121 @@
+
+**** 01/09/22 17:41:12 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-gia_acsweep"  [ D:\Stavros\StavrosDIAFORA\Πανεπιστήμιο\7 ΕΞΑΜΗΝΟ\Ηλεκτρονική ΙΙΙ\hl3_tel_enisx9671\kyklwma_k
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "gia_acsweep.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+.LIB "../../../hl3_telestikos_9671-pspicefiles/hl3_telestikos_9671.lib" 
+* From [PSPICE NETLIST] section of C:\Users\Stavros\AppData\Roaming\SPB_Data\cdssetup\OrCAD_PSpice\17.2.0\PSpice.ini file:
+.lib "nomd.lib" 
+
+*Analysis directives: 
+.AC DEC 500 100 100Meg
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source HL3_TELESTIKOS_9671
+M_M1         N00760 0 N00772 N00772 MbreakN  
++ L=1u  
++ W=8u         
+M_M2         N00768 N00825 N00772 N00772 MbreakN  
++ L=1u  
++ W=8u         
+M_M3         N00760 N00760 N00923 N00923 MbreakP  
++ L=1u  
++ W=1u         
+M_M4         N00768 N00760 N00923 N00923 MbreakP  
++ L=1u  
++ W=1u         
+M_M5         N00772 N01071 N01079 N01079 MbreakN  
++ L=1u  
++ W=1u         
+M_M6         N00865 N00768 N00923 N00923 MbreakP  
++ L=1u  
++ W=13u         
+M_M7         N00865 N01071 N01079 N01079 MbreakN  
++ L=1u  
++ W=6u         
+M_M8         N01071 N01071 N01079 N01079 MbreakN  
++ L=1u  
++ W=1u         
+C_Cc         N00768 N00865  0.5962p  TC=0,0 
+C_CL         0 N00865  2.71p  TC=0,0 
+I_Ib         N00923 N01071 DC 62uAdc  
+V_Vdd         N00923 0 2.013Vdc
+V_Vss         0 N01079 2.013Vdc
+V_V1         0 N00825 DC 0Vdc AC 1Vac 
+M_M16         N04848 N04968 N05058 N05058 MbreakN  
++ L=1u  
++ W=1u         
+M_M15         N04968 N04968 N05058 N05058 MbreakN  
++ L=1u  
++ W=1u         
+M_M12         N04584 0 N04848 N04848 MbreakN  
++ L=1u  
++ W=8u         
+V_Vss1         0 N05058 2.013Vdc
+V_Vdd1         N04450 0 2.013Vdc
+V_V2         0 N04844 DC 0Vdc AC 1Vac 
+M_M13         N04642 N04844 N04848 N04848 MbreakN  
++ L=1u  
++ W=8u         
+M_M9         N04584 N04584 N04450 N04450 MbreakP  
++ L=1u  
++ W=1u         
+C_Cc1         N04642 N04660  0.5962p  TC=0,0 
+M_M14         N04660 N04968 N05058 N05058 MbreakN  
++ L=1u  
++ W=6u         
+M_M11         N04660 N04642 N04450 N04450 MbreakP  
++ L=1u  
++ W=13u         
+C_CL1         0 N04660  2.71p  TC=0,0 
+M_M10         N04642 N04584 N04450 N04450 MbreakP  
++ L=1u  
++ W=1u         
+M_M17         N04968 N05743 N04450 N04450 MbreakP  
++ L=1u  
++ W=1u         
+M_M18         N05751 N05743 N04450 N04450 MbreakP  
++ L=1u  
++ W=1u         
+M_M19         N04968 N05809 N05785 N05785 MbreakN  
++ L=1u  
++ W=1u         
+M_M20         N05751 N05809 N05755 N05755 MbreakN  
++ L=1u  
++ W=1u         
+M_M21         N05785 N05813 N05759 N05759 MbreakN  
++ L=1u  
++ W=1u         
+M_M22         N05755 N05813 N05759 N05759 MbreakN  
++ L=1u  
++ W=1u         
+R_Rb         N05058 N05759  10000000k TC=0,0 
+
+**** RESUMING gia_acsweep.cir ****
+.END
+
+ERROR -- Circuit Too Large!
+EVALUATION VERSION Limit Exceeded for "Q" Devices!
+
+
+

@@ -1,0 +1,196 @@
+
+**** 01/08/22 20:52:25 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-gia_SR_transientTime"  [ C:\Cadence\hl3_telestikos_mePolwsh9671-PSpiceFiles\SCHEMATIC1\gia_SR_transientTime.
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "gia_SR_transientTime.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+.LIB "../../../hl3_telestikos_mepolwsh9671-pspicefiles/hl3_telestikos_mepolwsh9671.lib" 
+* From [PSPICE NETLIST] section of C:\Users\Stavros\AppData\Roaming\SPB_Data\cdssetup\OrCAD_PSpice\17.2.0\PSpice.ini file:
+.lib "nomd.lib" 
+
+*Analysis directives: 
+.TRAN  0 2us 0 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source HL3_TELESTIKOS_MEPOLWSH9671
+M_M16         N04848 N04968 N05058 N05058 MbreakN  
++ L=1u  
++ W=1u         
+M_M15         N04968 N04968 N05058 N05058 MbreakN  
++ L=1u  
++ W=1u         
+M_M12         N04584 0 N04848 N04848 MbreakN  
++ L=1u  
++ W=8u         
+V_Vss1         0 N05058 2.013Vdc
+V_Vdd1         N04450 0 2.013Vdc
+M_M13         N04642 N04844 N04848 N04848 MbreakN  
++ L=1u  
++ W=8u         
+M_M9         N04584 N04584 N04450 N04450 MbreakP  
++ L=1u  
++ W=1u         
+C_Cc1         N04642 N04660  0.5962p  TC=0,0 
+M_M14         N04660 N04968 N05058 N05058 MbreakN  
++ L=1u  
++ W=6u         
+M_M11         N04660 N04642 N04450 N04450 MbreakP  
++ L=1u  
++ W=13u         
+C_CL1         0 N04660  2.71p  TC=0,0 
+M_M10         N04642 N04584 N04450 N04450 MbreakP  
++ L=1u  
++ W=1u         
+M_M17         N04968 N04968 N04450 N04450 MbreakP  
++ L=1u  
++ W=1u         
+M_M18         N05751 N04968 N04450 N04450 MbreakP  
++ L=1u  
++ W=1u         
+M_M19         N04968 N05751 N05785 N05785 MbreakN  
++ L=1u  
++ W=1u         
+M_M20         N05751 N05751 N05755 N05755 MbreakN  
++ L=1u  
++ W=1u         
+M_M21         N05785 N05755 N05773 N05773 MbreakN  
++ L=1u  
++ W=4u         
+M_M22         N05755 N05755 N05058 N05058 MbreakN  
++ L=1u  
++ W=1u         
+R_Rb         N05058 N05773  1000k TC=0,0 
+V_V1         0 N04844  
++PULSE 0 1 0 1n 1n 20n 40n
+
+**** RESUMING gia_SR_transientTime.cir ****
+.END
+
+**** 01/08/22 20:52:25 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-gia_SR_transientTime"  [ C:\Cadence\hl3_telestikos_mePolwsh9671-PSpiceFiles\SCHEMATIC1\gia_SR_transientTime.
+
+
+ ****     MOSFET MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               MbreakN         MbreakP         
+               NMOS            PMOS            
+       LEVEL    3               3            
+         TPG                   -1            
+           L  100.000000E-06  100.000000E-06 
+           W  100.000000E-06  100.000000E-06 
+          LD  164.700000E-09   22.000000E-09 
+         VTO     .786           -.9056       
+          KP   96.379000E-06   29.352000E-06 
+       GAMMA     .5863           .4863       
+         PHI     .6              .6          
+      LAMBDA    0               0            
+         RSH   85.45          104.7          
+          IS   10.000000E-15   10.000000E-15 
+          JS    0               0            
+          PB     .8              .85         
+        PBSW     .8              .85         
+          CJ  385.410000E-06  484.470000E-06 
+        CJSW  139.400000E-12  164.570000E-12 
+          MJ    1.1854           .5027       
+        MJSW     .125195         .217168     
+        CGSO  402.410000E-12   53.752000E-12 
+        CGDO  402.410000E-12   53.752000E-12 
+        CGBO  361.440000E-12  336.500000E-12 
+        NSUB   16.160000E+15   18.900000E+15 
+         NFS    5.000000E+12    3.460000E+12 
+         TOX   21.200000E-09   21.200000E-09 
+          XJ  200.000000E-09  200.000000E-09 
+          UO  591.7           180.2          
+       UCRIT   10.000000E+03   10.000000E+03 
+        VMAX  208.200000E+03  373.200000E+03 
+       DELTA     .6967          1.52         
+       THETA     .08122          .1248       
+         ETA     .07066          .1641       
+       KAPPA     .1396          9.694        
+      DIOMOD    1               1            
+         VFB    0               0            
+        LETA    0               0            
+        WETA    0               0            
+          U0    0               0            
+        TEMP    0               0            
+         VDD    5               5            
+       XPART    0               0            
+
+
+**** 01/08/22 20:52:25 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-gia_SR_transientTime"  [ C:\Cadence\hl3_telestikos_mePolwsh9671-PSpiceFiles\SCHEMATIC1\gia_SR_transientTime.
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N04450)    2.0130 (N04584)     .0155 (N04642)     .0155 (N04660)    -.0606     
+
+(N04844)    0.0000 (N04848)    -.7883 (N04968)    -.6000 (N05058)   -2.0130     
+
+(N05751)     .7324 (N05755)    -.6403 (N05773)   -1.1355 (N05785)    -.6108 
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_Vss1      -3.491E-04
+    V_Vdd1      -3.491E-04
+    V_V1         0.000E+00
+
+    TOTAL POWER DISSIPATION   1.41E-03  WATTS
+
+
+
+          JOB CONCLUDED
+
+**** 01/08/22 20:52:25 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-gia_SR_transientTime"  [ C:\Cadence\hl3_telestikos_mePolwsh9671-PSpiceFiles\SCHEMATIC1\gia_SR_transientTime.
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+  Total job time (using Solver 1)   =         .19
+

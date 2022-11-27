@@ -1,0 +1,98 @@
+
+**** 01/08/22 20:16:22 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-gia_acsweep"  [ C:\Cadence\hl3_telestikos_mePolwsh9671-PSpiceFiles\SCHEMATIC1\gia_acsweep.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "gia_acsweep.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+.LIB "../../../hl3_telestikos_mepolwsh9671-pspicefiles/hl3_telestikos_mepolwsh9671.lib" 
+* From [PSPICE NETLIST] section of C:\Users\Stavros\AppData\Roaming\SPB_Data\cdssetup\OrCAD_PSpice\17.2.0\PSpice.ini file:
+.lib "nomd.lib" 
+
+*Analysis directives: 
+.AC DEC 500 100 100Meg
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source HL3_TELESTIKOS_MEPOLWSH9671
+M_M16         N04848 N04968 N05058 N05058 MbreakN  
++ L=1u  
++ W=1u         
+M_M15         N04968 N04968 N05058 N05058 MbreakN  
++ L=1u  
++ W=1u         
+M_M12         N04584 0 N04848 N04848 MbreakN  
++ L=1u  
++ W=8u         
+V_Vss1         0 N05058 2.013Vdc
+V_Vdd1         N04450 0 2.013Vdc
+V_V2         0 N04844 DC 0Vdc AC 1Vac 
+M_M13         N04642 N04844 N04848 N04848 MbreakN  
++ L=1u  
++ W=8u         
+M_M9         N04584 N04584 N04450 N04450 MbreakP  
++ L=1u  
++ W=1u         
+C_Cc1         N04642 N04660  0.5962p  TC=0,0 
+M_M14         N04660 N04968 N05058 N05058 MbreakN  
++ L=1u  
++ W=6u         
+M_M11         N04660 N04642 N04450 N04450 MbreakP  
++ L=1u  
++ W=13u         
+C_CL1         0 N04660  2.71p  TC=0,0 
+M_M10         N04642 N04584 N04450 N04450 MbreakP  
++ L=1u  
++ W=1u         
+M_M17         N04968 N05743 N04450 N04450 MbreakP  
++ L=1u  
++ W=1u         
+M_M18         N05751 N05743 N04450 N04450 MbreakP  
++ L=1u  
++ W=1u         
+M_M19         N04968 N05809 N05785 N05785 MbreakN  
++ L=1u  
++ W=1u         
+M_M20         N05751 N05809 N05755 N05755 MbreakN  
++ L=1u  
++ W=1u         
+M_M21         N05785 N05813 N05759 N05759 MbreakN  
++ L=1u  
++ W=1u         
+M_M22         N05755 N05813 N05759 N05759 MbreakN  
++ L=1u  
++ W=1u         
+R_Rb         N05058 N05759  10000000k TC=0,0 
+
+**** RESUMING gia_acsweep.cir ****
+.END
+
+INFO(ORPSIM-15423): Unable to find index file hl3_telestikos_mepolwsh9671.ind for library file hl3_telestikos_mepolwsh9671.lib.
+
+INFO(ORPSIM-15422): Making new index file hl3_telestikos_mepolwsh9671.ind for library file hl3_telestikos_mepolwsh9671.lib.
+
+Index has 2 entries from 1 file(s).
+
+ERROR(ORPSIM-15142): Node N05743 is floating
+
+ERROR(ORPSIM-15142): Node N05809 is floating
+
+ERROR(ORPSIM-15142): Node N05813 is floating
+

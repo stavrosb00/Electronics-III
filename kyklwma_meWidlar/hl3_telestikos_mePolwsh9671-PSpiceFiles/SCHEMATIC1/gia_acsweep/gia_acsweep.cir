@@ -1,0 +1,20 @@
+** Profile: "SCHEMATIC1-gia_acsweep"  [ C:\Cadence\hl3_telestikos_mePolwsh9671-PSpiceFiles\SCHEMATIC1\gia_acsweep.sim ] 
+
+** Creating circuit file "gia_acsweep.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+.LIB "../../../hl3_telestikos_mepolwsh9671-pspicefiles/hl3_telestikos_mepolwsh9671.lib" 
+* From [PSPICE NETLIST] section of C:\Users\Stavros\AppData\Roaming\SPB_Data\cdssetup\OrCAD_PSpice\17.2.0\PSpice.ini file:
+.lib "nomd.lib" 
+
+*Analysis directives: 
+.AC DEC 500 100 100Meg
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+.END
